@@ -1,0 +1,10 @@
+__pycache__/
+dist/
+env/
+*.py[co]
+poetry.lock
+
+*.ab
+*.tar
+apps/
+*.xml
