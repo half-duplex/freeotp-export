@@ -2,7 +2,7 @@ __pycache__/
 dist/
 env/
 *.py[co]
-poetry.lock
+*.egg-info/
 
 *.ab
 *.tar
