@@ -3,6 +3,12 @@
 
 Rescue your OTP tokens from FreeOTP
 
+# Not compatible with modern FreeOTP
+
+FreeOTP was finally updated and now uses a different storage format, which
+this tool does not yet support. See #1
+
+
 ## Installing
 You can install directly through pip: `pip install freeotp-export`
 
