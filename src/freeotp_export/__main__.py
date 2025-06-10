@@ -63,12 +63,27 @@ def parse_entry(name: str, data: str) -> str:
         "issuer": data["issuerExt"],
     }
     if data["algo"] != "SHA1":
+        LOGGER.warning(
+            "Token %r uses %s! This may not work on some apps, like Google Authenticator.",
+            name,
+            data["algo"],
+        )
         params["algorithm"] = data["algo"]
     if data["digits"] != 6:
+        LOGGER.warning(
+            "Token %r uses %d digits! This may not work on some apps, like Google Authenticator.",
+            name,
+            data["digits"],
+        )
         params["digits"] = data["digits"]
     if data["type"].lower == "hotp":
         params["counter"] = data["counter"]
     if data["period"] != 30:
+        LOGGER.warning(
+            "Token %r uses %d-second rotation! This may not work on some apps, like Google Authenticator.",
+            name,
+            data["period"],
+        )
         params["period"] = data["period"]
 
     uri = urlunparse(
