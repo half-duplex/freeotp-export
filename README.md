@@ -44,9 +44,10 @@ You should then have the token file, `tokens.xml`.
 
 ### Read the File
 Just run this tool, and it'll give you both the OTP URIs (`otpauth://...`) and
-scannable QR codes. Note that Google Authenticator ignores the `digits`
-parameter, so it does not work for issuers like Blizzard that use lengths other
-than 6.
+scannable QR codes. Note that Google Authenticator
+[ignores](https://github.com/google/google-authenticator/wiki/Key-Uri-Format)
+the `digits` parameter, so it does not work for issuers like Blizzard that use
+lengths other than 6.
 
 If you used `pip install`: `$ freeotp-export tokens.xml`
 
@@ -54,3 +55,8 @@ Or with Poetry: `$ poetry run freeotp-export tokens.xml`
 
 After importing everything to a new app, be sure to delete `tokens.xml` and
 `backup.ab`, since they contain all of your tokens!
+
+
+## See Also
+[freeotp-export](https://github.com/viljoviitanen/freeotp-export), an HTML/JS
+tool to do the same thing, which I discovered after writing and publishing this.
